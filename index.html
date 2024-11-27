@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Work Calendar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleWeekendOption() {
+            const isHalfWeekend = document.getElementById("halfWeekendToggle").checked;
+            const dropdowns = document.querySelectorAll(".workday-dropdown");
+
+            dropdowns.forEach((dropdown) => {
+                dropdown.disabled = !isHalfWeekend;
+                dropdown.parentElement.classList.toggle("opacity-50", !isHalfWeekend);
+            });
+        }
+    </script>
+</head>
+
+<body class="">
+    <div class="">
+        <h1 class="text-2xl font-bold mb-6">Add Work Calendar</h1>
+
+
+<!-- Half Working Day Option Card -->
+<div class="mb-6 p-6">
+    <div class="flex items-center">
+        <input type="checkbox" id="halfWeekendToggle" class="w-5 h-5 mr-2" onclick="toggleWeekendOption()" />
+        <label for="halfWeekendToggle" class="text-lg">Define weekends</label>
+        <label for="halfWeekendToggle" class="text-lg">Half working day & half weekend</label>
+    </div>
+</div>
+
+<!-- Work Calendar -->
+<div class="overflow-x-auto mb-6 p-6 shadow-lg rounded-lg">
+    <table class="table-auto w-full">
+        <thead>
+            <tr class="bg-gray-100">
+                <th class="px-4 py-2 text-left">Day</th>
+                <th class="px-4 py-2 text-center">All</th>
+                <th class="px-4 py-2 text-center">1st</th>
+                <th class="px-4 py-2 text-center">2nd</th>
+                <th class="px-4 py-2 text-center">3rd</th>
+                <th class="px-4 py-2 text-center">4th</th>
+                <th class="px-4 py-2 text-center">5th</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--( No of days row started) -->
+            <tr class="hover:bg-gray-50">
+                <div class="">
+                <td class="px-4 py-2 shadow-lg rounded-lg">Sunday</td>
+                </div>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for All Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <input type="checkbox" class="w-5 h-5" onclick="toggleRowCheckbox(this, 'sunday')" />
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 1st Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center ">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'sunday-1st')" />                         
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 2nd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'sunday-2nd')" />                        
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 3rd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'sunday-3rd')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 4th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'sunday-4th')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 5th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'sunday-5th')" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+                <div class="">
+                <td class="px-4 py-2 shadow-lg rounded-lg">Monday</td>
+                </div>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for All Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <input type="checkbox" class="w-5 h-5" onclick="toggleRowCheckbox(this, 'monday')" />
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 1st Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center ">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'monday-1st')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 2nd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'monday-2nd')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 3rd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'monday-3rd')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 4th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'monday-4th')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 5th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'monday-5th')" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+                <div class="">
+                <td class="px-4 py-2 shadow-lg rounded-lg">Tuesday</td>
+                </div>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for All Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <input type="checkbox" class="w-5 h-5" onclick="toggleRowCheckbox(this, 'tuesday')" />
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 1st Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center ">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'tuesday-1st')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 2nd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'tuesday-2nd')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 3rd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'tuesday-3rd')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 4th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'tuesday-4th')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 5th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'tuesday-5th')" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+                <div class="">
+                <td class="px-4 py-2 shadow-lg rounded-lg">Wednesday</td>
+                </div>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for All Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <input type="checkbox" class="w-5 h-5" onclick="toggleRowCheckbox(this, 'wednesday')" />
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 1st Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center ">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'wednesday-1st')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 2nd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'wednesday-2nd')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 3rd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'wednesday-3rd')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 4th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'wednesday-4th')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 5th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'wednesday-5th')" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+                <div class="">
+                <td class="px-4 py-2 shadow-lg rounded-lg">Thursday</td>
+                </div>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for All Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <input type="checkbox" class="w-5 h-5" onclick="toggleRowCheckbox(this, 'thursday')" />
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 1st Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center ">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'thursday-1st')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 2nd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'thursday-2nd')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 3rd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'thursday-3rd')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 4th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'thursday-4th')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 5th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'thursday-5th')" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+                <div class="">
+                <td class="px-4 py-2 shadow-lg rounded-lg">Friday</td>
+                </div>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for All Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <input type="checkbox" class="w-5 h-5" onclick="toggleRowCheckbox(this, 'friday')" />
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 1st Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center ">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'friday-1st')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 2nd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'friday-2nd')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 3rd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'friday-3rd')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 4th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'friday-4th')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 5th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'friday-5th')" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+                <div class="">
+                <td class="px-4 py-2 shadow-lg rounded-lg">Saturday</td>
+                </div>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for All Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <input type="checkbox" class="w-5 h-5" onclick="toggleRowCheckbox(this, 'saturday')" />
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 1st Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center ">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'saturday-1st')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 2nd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'saturday-2nd')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 3rd Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'saturday-3rd')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 4th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'saturday-4th')" />
+                        </div>
+                    </div>
+                </td>
+                <td class="px-4 py-2 text-center">
+                    <!-- Card for 5th Half Dropdown and Checkbox -->
+                    <div class="p-6 bg-white shadow-lg rounded-lg">
+                        <div class="flex items-center justify-center space-x-2">
+                            <input type="checkbox" class="w-6 h-6" onclick="toggleDropdown(this, 'saturday-5th')" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+             <!--( No of days row Ended) -->
+        </tbody>
+    </table>
+    <div class="flex justify-end space-x-4">
+        <button class="px-6 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Cancel</button>
+        <button class="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Save</button>
+    </div>
+</div>
+</div>
+</div>
+<script>
+    // Toggles the disabled state and opacity for all dropdowns in the "Half Weekend" section
+    function toggleWeekendOption() {
+        const isHalfWeekend = document.getElementById("halfWeekendToggle").checked;
+        const dropdowns = document.querySelectorAll(".workday-dropdown");
+
+        dropdowns.forEach(dropdown => {
+            dropdown.disabled = !isHalfWeekend;
+            dropdown.parentElement.classList.toggle("opacity-50", !isHalfWeekend);
+        });
+    }
+
+    // Toggles all checkboxes and their corresponding dropdowns in a row
+    function toggleRowCheckbox(checkbox, day) {
+        const dayParts = ['1st', '2nd', '3rd', '4th', '5th'];
+        const isChecked = checkbox.checked;
+
+        dayParts.forEach(part => {
+            const partCheckbox = document.querySelector(`input[data-day="${day}-${part}"]`);
+            const dropdown = document.getElementById(`${day}-${part}`);
+            if (partCheckbox) partCheckbox.checked = isChecked;
+            if (dropdown) dropdown.disabled = !isChecked;
+        });
+    }
+
+    // Enables or disables an individual dropdown based on its corresponding checkbox
+    function toggleDropdown(checkbox, dayPart) {
+        const dropdown = document.getElementById(dayPart);
+        if (dropdown) dropdown.disabled = !checkbox.checked;
+    }
+</script>
+</body>
+
+</html>
